@@ -1,0 +1,15 @@
+/* frontend/src/App.css */
+@import './styles/theme.css';
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'LG Smart', Arial, sans-serif;
+}
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-primary);
+}
