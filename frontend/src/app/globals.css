@@ -223,74 +223,91 @@
 }
 
 :root {
-  --background: oklch(98.46% 0.002 247.84);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(54.65% 0.246 262.87);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(98.46% 0.002 247.84);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* LG 브랜드 컬러 - 액티브 레드 및 헤리티지 레드 */
+  --lg-active-red: #FD312E;
+  --lg-heritage-red: #A50034;
+  --lg-gray: #54575A;
+  --lg-light-gray: #F0ECE4;
+  
+  /* 기본 테마 색상 - LG 브랜드 컬러 적용 */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: var(--lg-heritage-red);
+  --primary-foreground: #FFFFFF;
+  --secondary: #54575A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F5F5F5;
+  --muted-foreground: #737373;
+  --accent: #F5F5F5;
+  --accent-foreground: var(--lg-heritage-red);
+  --destructive: #E11D48;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
+  --ring: var(--lg-heritage-red);
+  
+  /* 차트 색상 */
+  --chart-1: var(--lg-heritage-red);
+  --chart-2: var(--lg-active-red);
+  --chart-3: #54575A;
+  --chart-4: #86888A;
+  --chart-5: #BDBDBD;
+  
+  --radius: 0.5rem;
+  
+  /* 사이드바 색상 */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: var(--lg-heritage-red);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: var(--lg-heritage-red);
+  --sidebar-border: #E5E5E5;
+  --sidebar-ring: var(--lg-heritage-red);
 }
 
 .dark {
-  --background: oklch(0.185 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(54.65% 0.246 262.87);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(27.39% 0.005 286.03);
-  --accent-foreground: oklch(98.46% 0.002 247.84)
-    --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(21.03% 0.006 285.89);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  /* LG 다크 테마 색상 - LG 브랜드 컬러 다크모드 적용 */
+  --background: #121212;
+  --foreground: #F5F5F5;
+  --card: #1E1E1E;
+  --card-foreground: #F5F5F5;
+  --popover: #1E1E1E;
+  --popover-foreground: #F5F5F5;
+  --primary: var(--lg-active-red);
+  --primary-foreground: #FFFFFF;
+  --secondary: #86888A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #2A2A2A;
+  --muted-foreground: #A1A1A1;
+  --accent: #2A2A2A;
+  --accent-foreground: var(--lg-active-red);
+  --destructive: #F43F5E;
+  --destructive-foreground: #FFFFFF;
+  --border: #333333;
+  --input: #333333;
+  --ring: var(--lg-active-red);
+  
+  /* 차트 색상 - 다크모드 */
+  --chart-1: var(--lg-active-red);
+  --chart-2: var(--lg-heritage-red);
+  --chart-3: #BDBDBD;
+  --chart-4: #86888A;
+  --chart-5: #54575A;
+  
+  /* 사이드바 색상 - 다크모드 */
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #F5F5F5;
+  --sidebar-primary: var(--lg-active-red);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #2A2A2A;
+  --sidebar-accent-foreground: #F5F5F5;
+  --sidebar-border: #333333;
+  --sidebar-ring: var(--lg-active-red);
 }
 
 @layer base {

@@ -100,10 +100,10 @@ export function Navbar() {
   const handleOverlayClick = () => setIsDrawerOpen(false);
 
   const logoSrc = !mounted
-    ? '/kortix-logo.svg'
+    ? '/lg-logo.svg'
     : resolvedTheme === 'dark'
-      ? '/kortix-logo-white.svg'
-      : '/kortix-logo.svg';
+      ? '/lg-logo-white.svg'
+      : '/lg-logo.svg';
 
   return (
     <header
@@ -126,14 +126,17 @@ export function Navbar() {
           )}
         >
           <div className="flex h-[56px] items-center justify-between p-4">
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src={logoSrc}
-                alt="Kortix Logo"
-                width={140}
-                height={22}
-                priority
-              />
+            <Link href="/" className="flex items-center gap-2">
+              <div className="w-10 h-10">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-full h-full">
+                  <circle cx="50" cy="50" r="45" fill="#A50034" />
+                  <path d="M35,35 L35,65 L45,65 L45,50 L65,65 L65,50 L45,35 L35,35 Z" fill="white" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-lg text-[#A50034]">LUXIA</span>
+                <span className="font-medium text-xs text-muted-foreground">by LGCNS</span>
+              </div>
             </Link>
 
             <NavMenu />
@@ -151,17 +154,17 @@ export function Navbar() {
                 </Link> */}
                 {user ? (
                   <Link
-                    className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
+                    className="bg-[#A50034] h-8 hidden md:flex items-center justify-center text-sm font-medium tracking-wide rounded-md text-white w-fit px-5 py-4 shadow-sm hover:bg-[#A50034]/90 transition-all"
                     href="/dashboard"
                   >
-                    Dashboard
+                    대시보드
                   </Link>
                 ) : (
                   <Link
-                    className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
+                    className="bg-[#A50034] h-8 hidden md:flex items-center justify-center text-sm font-medium tracking-wide rounded-md text-white w-fit px-5 py-4 shadow-sm hover:bg-[#A50034]/90 transition-all"
                     href="/auth"
                   >
-                    Hire Suna
+                    시작하기
                   </Link>
                 )}
               </div>
@@ -205,17 +208,17 @@ export function Navbar() {
               {/* Mobile menu content */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <Link href="/" className="flex items-center gap-3">
-                    <Image
-                      src={logoSrc}
-                      alt="Kortix Logo"
-                      width={120}
-                      height={22}
-                      priority
-                    />
-                    <span className="font-medium text-primary text-sm">
-                      / Suna
-                    </span>
+                  <Link href="/" className="flex items-center gap-2">
+                    <div className="w-8 h-8">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-full h-full">
+                        <circle cx="50" cy="50" r="45" fill="#A50034" />
+                        <path d="M35,35 L35,65 L45,65 L45,50 L65,65 L65,50 L45,35 L35,35 Z" fill="white" />
+                      </svg>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-bold text-base text-[#A50034]">LUXIA</span>
+                      <span className="font-medium text-[10px] text-muted-foreground">by LGCNS</span>
+                    </div>
                   </Link>
                   <button
                     onClick={toggleDrawer}
@@ -263,17 +266,17 @@ export function Navbar() {
                 <div className="flex flex-col gap-2">
                   {user ? (
                     <Link
-                      href="/dashboard"
-                      className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
+                    href="/dashboard"
+                    className="bg-[#A50034] h-10 flex items-center justify-center text-sm font-medium tracking-wide rounded-md text-white w-full px-4 shadow-sm hover:bg-[#A50034]/90 transition-all ease-out active:scale-95"
                     >
-                      Dashboard
+                    대시보드
                     </Link>
                   ) : (
                     <Link
                       href="/auth"
-                      className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
+                      className="bg-[#A50034] h-10 flex items-center justify-center text-sm font-medium tracking-wide rounded-md text-white w-full px-4 shadow-sm hover:bg-[#A50034]/90 transition-all ease-out active:scale-95"
                     >
-                      Hire Suna
+                      시작하기
                     </Link>
                   )}
                   <div className="flex justify-between">

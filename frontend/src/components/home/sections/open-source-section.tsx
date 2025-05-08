@@ -1,6 +1,5 @@
 import { SectionHeader } from '@/components/home/section-header';
-import { siteConfig } from '@/lib/home';
-import { Github } from 'lucide-react';
+import { BarChart3, LineChart, Users, Lightbulb, PieChart, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 
 export function OpenSourceSection() {
@@ -11,181 +10,156 @@ export function OpenSourceSection() {
     >
       <div className="w-full max-w-6xl mx-auto px-6">
         <SectionHeader>
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance pb-1">
-            100% Open Source
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-center text-balance pb-1">
+            UX&I 데이터 분석 플랫폼
           </h2>
           <p className="text-muted-foreground text-center text-balance font-medium">
-            Suna is fully open source. Join our community and help shape the
-            future of AI.
+            LUXIA를 통해 고객 경험을 분석하고, UX/UI 요소를 향상시켜<br />
+            데이터 기반 여정 분석과 최적화를 구현하세요.
           </p>
         </SectionHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-12">
-          <div className="rounded-xl bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border p-6">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-2 text-primary font-medium">
-                <Github className="h-5 w-5" />
-                <span>kortix-ai/suna</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
+          <div className="rounded-lg bg-white dark:bg-zinc-900 border border-[#A50034]/20 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-full bg-[#A50034]/10 flex items-center justify-center">
+                <BarChart3 className="h-6 w-6 text-[#A50034]" />
               </div>
               <div className="relative">
-                <h3 className="text-2xl font-semibold tracking-tight">
-                  The Generalist AI Agent
+                <h3 className="text-xl font-semibold tracking-tight text-[#A50034]">
+                  마케팅 데이터 분석
                 </h3>
-                <p className="text-muted-foreground mt-2">
-                  Explore, contribute, or fork our repository. Suna is built
-                  with transparency and collaboration at its core.
+                <p className="text-muted-foreground mt-2 text-sm">
+                  Google Analytics, BigQuery를 통한 데이터 분석으로 우수한 마케팅 인사이트를 도출합니다. 사용자 행동을 분석하고 운영 효율을 높이세요.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-secondary/10 border-secondary/20 text-secondary">
-                  TypeScript
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  실시간 분석
                 </span>
-                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-secondary/10 border-secondary/20 text-secondary">
-                  Python
-                </span>
-                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-secondary/10 border-secondary/20 text-secondary">
-                  Apache 2.0 License
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  데이터 시각화
                 </span>
               </div>
-              <Link
-                href="https://github.com/Kortix-ai/Suna"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex h-10 items-center justify-center gap-2 text-sm font-medium tracking-wide rounded-full text-primary-foreground dark:text-black px-6 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] bg-primary dark:bg-white hover:bg-primary/90 dark:hover:bg-white/90 transition-all duration-200 w-fit"
-              >
-                <span>View on GitHub</span>
-                <span className="inline-flex items-center justify-center size-5 rounded-full bg-white/20 dark:bg-black/10 group-hover:bg-white/30 dark:group-hover:bg-black/20 transition-colors duration-200">
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-primary-foreground dark:text-black"
-                  >
-                    <path
-                      d="M7 17L17 7M17 7H8M17 7V16"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Link>
             </div>
           </div>
 
-          <div className="rounded-xl bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border p-6">
-            <div className="flex flex-col gap-6">
-              <h3 className="text-xl md:text-2xl font-medium tracking-tight">
-                Transparency & Trust
-              </h3>
-              <p className="text-muted-foreground">
-                We believe AI should be open and accessible to everyone. Our
-                open source approach ensures accountability, innovation, and
-                community collaboration.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-secondary/10 p-2 mt-0.5">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-secondary"
-                    >
-                      <path
-                        d="M9.75 12.75L11.25 14.25L14.25 9.75"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Transparency</h4>
-                    <p className="text-muted-foreground text-sm">
-                      Fully auditable codebase
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-secondary/10 p-2 mt-0.5">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-secondary"
-                    >
-                      <path
-                        d="M9.75 12.75L11.25 14.25L14.25 9.75"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Community</h4>
-                    <p className="text-muted-foreground text-sm">
-                      Join our developers
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="rounded-full bg-secondary/10 p-2 mt-0.5">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-secondary"
-                    >
-                      <path
-                        d="M9.75 12.75L11.25 14.25L14.25 9.75"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                      <path
-                        d="M4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Apache 2.0</h4>
-                    <p className="text-muted-foreground text-sm">
-                      Free to use and modify
-                    </p>
-                  </div>
-                </div>
+          <div className="rounded-lg bg-white dark:bg-zinc-900 border border-[#A50034]/20 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-full bg-[#A50034]/10 flex items-center justify-center">
+                <Users className="h-6 w-6 text-[#A50034]" />
+              </div>
+              <div className="relative">
+                <h3 className="text-xl font-semibold tracking-tight text-[#A50034]">
+                  웹 타겟팅 정확도 향상
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  플랫폼을 통해 연령, 성별, 관심사 등 고객 세분화를 정확하게 분석하고 퍼소나바이즈된 경험을 제공하세요.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  사용자 퍼소나
+                </span>
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  타겟팅 캐페인
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-lg bg-white dark:bg-zinc-900 border border-[#A50034]/20 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-full bg-[#A50034]/10 flex items-center justify-center">
+                <Smartphone className="h-6 w-6 text-[#A50034]" />
+              </div>
+              <div className="relative">
+                <h3 className="text-xl font-semibold tracking-tight text-[#A50034]">
+                  웹 탐색 자동화
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  AI 기반 웹 탐색 자동화로 고객의 사이트 사용성을 분석하고 UX/UI 문제점을 자동으로 식별하여 개선 방안을 제시합니다.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  UX/UI 개선
+                </span>
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  자동화 테스트
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="rounded-lg bg-white dark:bg-zinc-900 border border-[#A50034]/20 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-full bg-[#A50034]/10 flex items-center justify-center">
+                <LineChart className="h-6 w-6 text-[#A50034]" />
+              </div>
+              <div className="relative">
+                <h3 className="text-xl font-semibold tracking-tight text-[#A50034]">
+                  성과 측정 및 보고
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  다양한 KPI를 통합해 당신의 마케팅 성과를 실시간으로 추적하고 인터랙티브 대시보드로 경영진에게 필요한 보고서를 자동으로 생성합니다.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  성과 대시보드
+                </span>
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  자동 보고서
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="rounded-lg bg-white dark:bg-zinc-900 border border-[#A50034]/20 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-full bg-[#A50034]/10 flex items-center justify-center">
+                <PieChart className="h-6 w-6 text-[#A50034]" />
+              </div>
+              <div className="relative">
+                <h3 className="text-xl font-semibold tracking-tight text-[#A50034]">
+                  리털션 전략 제시
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  고객 방문 주기, 잠재고객 식별, 고객 이탈 예측 알고리즘을 통해 효과적인 리털션 전략을 제시하고 타겟팅된 캐페인 출리를 자동화합니다.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  고객 유지 대책
+                </span>
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  강화학습 모델
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="rounded-lg bg-white dark:bg-zinc-900 border border-[#A50034]/20 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="flex flex-col gap-5">
+              <div className="w-12 h-12 rounded-full bg-[#A50034]/10 flex items-center justify-center">
+                <Lightbulb className="h-6 w-6 text-[#A50034]" />
+              </div>
+              <div className="relative">
+                <h3 className="text-xl font-semibold tracking-tight text-[#A50034]">
+                  AI 기반 마케팅 전략
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  인공지능이 고객데이터를 분석하여 최신 트렌드와 시장 동향을 반영한 마케팅 전략을 자동으로 제시합니다. A/B 테스트를 통해 정확도를 높입니다.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  마케팅 전략 수립
+                </span>
+                <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold bg-[#A50034]/10 border-[#A50034]/20 text-[#A50034]">
+                  A/B 테스트
+                </span>
               </div>
             </div>
           </div>
