@@ -1,0 +1,8 @@
+/* frontend/src/styles/theme.css */
+:root {
+  --color-primary: #A50034;    /* LG 레드(주요 강조색) */
+  --color-secondary: #6B6B6B;  /* 중립 회색(보조 텍스트·아이콘) */
+  --color-bg: #FFFFFF;         /* 배경 색(화이트) */
+  --color-text: #111111;       /* 본문 텍스트(진한 색) */
+  --color-text-light: #6B6B6B; /* 보조 텍스트(회색) */
+}
