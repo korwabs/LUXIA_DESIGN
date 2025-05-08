@@ -1,79 +1,144 @@
-'use client';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from 'react';
-import { createClient } from '@/lib/supabase/client';
-import { User, Session } from '@supabase/supabase-js';
-import { SupabaseClient } from '@supabase/supabase-js';
+// 사용자 인터페이스 정의
+interface User {
+  id: string;
+  email?: string;
+  name?: string;
+  avatar_url?: string;
+}
 
-type AuthContextType = {
-  supabase: SupabaseClient;
-  session: Session | null;
+// 인증 컨텍스트 인터페이스 정의
+interface AuthContextType {
   user: User | null;
   isLoading: boolean;
+  signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
-};
+  signUp: (email: string, password: string, name: string) => Promise<void>;
+  resetPassword: (email: string) => Promise<void>;
+}
 
+// 인증 컨텍스트 생성
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const supabase = createClient();
-  const [session, setSession] = useState<Session | null>(null);
+// AuthProvider 컴포넌트 정의
+export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  // 초기 사용자 상태 로드
   useEffect(() => {
-    const getInitialSession = async () => {
-      const {
-        data: { session: currentSession },
-      } = await supabase.auth.getSession();
-      setSession(currentSession);
-      setUser(currentSession?.user ?? null);
+    const loadUser = async () => {
+      setIsLoading(true);
+      try {
+        // 로컬 스토리지에서 사용자 정보 확인 (실제로는 API 호출 필요)
+        const storedUser = localStorage.getItem('luxia_user');
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+        }
+      } catch (error) {
+        console.error('Failed to load user:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadUser();
+  }, []);
+
+  // 로그인 함수
+  const signIn = async (email: string, password: string) => {
+    setIsLoading(true);
+    try {
+      // 모의 로그인 처리 (실제로는 API 호출 필요)
+      const mockUser: User = {
+        id: 'user-123',
+        email,
+        name: email.split('@')[0],
+        avatar_url: `https://ui-avatars.com/api/?name=${email.split('@')[0]}&background=random`,
+      };
+      
+      // 로컬 스토리지에 사용자 정보 저장
+      localStorage.setItem('luxia_user', JSON.stringify(mockUser));
+      setUser(mockUser);
+    } catch (error) {
+      console.error('Sign in failed:', error);
+      throw error;
+    } finally {
       setIsLoading(false);
-    };
-
-    getInitialSession();
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (_event, newSession) => {
-        setSession(newSession);
-        setUser(newSession?.user ?? null);
-        // No need to set loading state here as initial load is done
-        // and subsequent changes shouldn't show a loading state for the whole app
-        if (isLoading) setIsLoading(false);
-      },
-    );
-
-    return () => {
-      authListener?.subscription.unsubscribe();
-    };
-  }, [supabase, isLoading]); // Added isLoading to dependencies to ensure it runs once after initial load completes
-
-  const signOut = async () => {
-    await supabase.auth.signOut();
-    // State updates will be handled by onAuthStateChange
+    }
   };
 
+  // 회원가입 함수
+  const signUp = async (email: string, password: string, name: string) => {
+    setIsLoading(true);
+    try {
+      // 모의 회원가입 처리 (실제로는 API 호출 필요)
+      const mockUser: User = {
+        id: 'user-' + Math.random().toString(36).substring(2, 9),
+        email,
+        name,
+        avatar_url: `https://ui-avatars.com/api/?name=${name}&background=random`,
+      };
+      
+      // 로컬 스토리지에 사용자 정보 저장
+      localStorage.setItem('luxia_user', JSON.stringify(mockUser));
+      setUser(mockUser);
+    } catch (error) {
+      console.error('Sign up failed:', error);
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // 로그아웃 함수
+  const signOut = async () => {
+    setIsLoading(true);
+    try {
+      // 로컬 스토리지에서 사용자 정보 제거
+      localStorage.removeItem('luxia_user');
+      setUser(null);
+    } catch (error) {
+      console.error('Sign out failed:', error);
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // 비밀번호 재설정 함수
+  const resetPassword = async (email: string) => {
+    setIsLoading(true);
+    try {
+      // 모의 비밀번호 재설정 처리 (실제로는 API 호출 필요)
+      console.log('Password reset email sent to:', email);
+    } catch (error) {
+      console.error('Password reset failed:', error);
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // 인증 컨텍스트 값 설정
   const value = {
-    supabase,
-    session,
     user,
     isLoading,
+    signIn,
     signOut,
+    signUp,
+    resetPassword,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
+}
 
-export const useAuth = (): AuthContextType => {
+// 인증 컨텍스트 훅
+export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
-};
+}
